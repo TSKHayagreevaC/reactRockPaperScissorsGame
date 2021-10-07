@@ -50,6 +50,8 @@ class GameHome extends Component {
     const userSelectedId = event.target.id
     const opponentSelectedId = this.randomNumberGenerator()
     const {choicesList} = this.props
+    const {score} = this.state
+    let gameScore = score
 
     const userSelectedImage = choicesList.filter(
       eachItem => eachItem.id === userSelectedId,
@@ -87,22 +89,21 @@ class GameHome extends Component {
         break
     }
 
-    let gameScore
     if (resultMessage === 'YOU WON') {
-      gameScore = 1
+      gameScore += 1
     } else if (resultMessage === 'YOU LOSE') {
-      gameScore = -1
+      gameScore -= 1
     } else if (resultMessage === 'IT IS DRAW') {
-      gameScore = 0
+      gameScore += 0
     }
 
-    this.setState(prevItem => ({
-      score: prevItem.score + gameScore,
+    this.setState({
+      score: gameScore,
       resultDisplayMessage: resultMessage,
       userDisplayImage: userSelectedImage,
       opponentDisplayImage: opponentSelectedImage,
       isGameOver: true,
-    }))
+    })
   }
 
   renderInitialButtonsContainer = () => {
@@ -115,6 +116,7 @@ class GameHome extends Component {
             <GameButton
               onClick={this.onClickButton}
               data-testid={`${eachItem.id.toLowerCase()}Button`}
+              type="button"
             >
               <GameButtonImage
                 id={eachItem.id}
@@ -129,9 +131,11 @@ class GameHome extends Component {
   }
 
   onClickPlayAgain = () => {
+    const {score} = this.state
+    const endGameScore = score
     this.setState({
       isGameOver: false,
-      score: 0,
+      score: endGameScore,
       resultDisplayMessage: '',
       userDisplayImage: '',
       opponentDisplayImage: '',
@@ -177,12 +181,12 @@ class GameHome extends Component {
     <Popup
       modal
       trigger={<PopupButton>Rules</PopupButton>}
-      className="popup-container"
+      className="popup-content"
     >
       {close => (
         <ModalContainer>
           <CloseButton type="button" onClick={() => close()}>
-            <RiCloseLine size={18} />
+            <RiCloseLine size={28} />
           </CloseButton>
           <ModalImage
             src="https://assets.ccbp.in/frontend/react-js/rock-paper-scissor/rules-image.png"

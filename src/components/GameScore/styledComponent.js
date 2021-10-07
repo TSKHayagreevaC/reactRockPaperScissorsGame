@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import styled from 'styled-components'
 
 export const ScoreContainer = styled.div`
@@ -17,6 +16,7 @@ export const ScoreHeading = styled.h1`
   margin: 5px 0px 5px 0px;
   font-family: 'Bree Serif';
   font-size: 20px;
+  font-family: 'Bree Serif';
   @media screen and (min-width: 768px) {
     font-size: 30px;
   }
@@ -39,7 +39,7 @@ export const ScoreCountContainer = styled.div`
 `
 
 export const ScoreDisplayText = styled.p`
-  margin: 5px 0px 5px 0px;
+  margin: 3px 0px 3px 0px;
   font-size: 14px;
   font-family: 'Bree Serif';
   color: #223a5f;
@@ -49,11 +49,12 @@ export const ScoreDisplayText = styled.p`
 `
 
 export const ScoreDisplayCount = styled.p`
-  margin: 5px 0px 5px 0px;
+  margin: 3px 0px 3px 0px;
   font-family: 'Roboto';
-  font-size: 22px;
+  font-size: 40px;
   color: #223a5f;
+  font-weight: bold;
   @media screen and (min-width: 768px) {
-    font-size: 32px;
+    font-size: 60px;
   }
 `

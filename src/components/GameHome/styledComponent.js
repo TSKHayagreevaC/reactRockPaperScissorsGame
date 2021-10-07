@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import styled from 'styled-components'
 
 export const GameBgContainer = styled.div`
@@ -7,7 +6,7 @@ export const GameBgContainer = styled.div`
   color: #ffffff;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   padding: 20px;
 `
@@ -97,37 +96,38 @@ export const PlayAgainButton = styled.button`
 `
 
 export const PopupButton = styled.button`
-  height: 20px;
-  width: 80px;
+  height: 40px;
+  width: 120px;
   border: none;
   border-radius: 8px;
   font-family: 'Bree Serif';
   color: #223a5f;
-  cursor: pointer;
   align-self: flex-end;
+  cursor: pointer;
 `
 
 export const ModalContainer = styled.div`
-  width: 250px;
+  width: 80%;
   height: 260px;
   background-color: #ffffff;
   border-radius: 8px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   @media screen and (min-width: 768px) {
-    width: 450px;
+    width: 80%;
     height: 400px;
   }
 `
 
 export const ModalImage = styled.img`
-  width: 230px;
+  width: 100%;
   height: 180px;
   margin: 10px;
   @media screen and (min-width: 768px) {
-    width: 400px;
+    width: 100%;
     height: 350px;
   }
 `
@@ -137,4 +137,5 @@ export const CloseButton = styled.button`
   outline: none;
   background-color: transparent;
   color: #223a5f;
+  cursor: pointer;
 `
