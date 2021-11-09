@@ -19,26 +19,6 @@ export const ButtonsList = styled.ul`
   justify-content: center;
   flex-wrap: wrap;
 `
-export const ButtonsListItem = styled.li`
-  list-style-type: none;
-  width: 40%;
-`
-
-export const GameButton = styled.button`
-  background-color: transparent;
-  border: none;
-  outline: none;
-  cursor: pointer;
-`
-
-export const GameButtonImage = styled.img`
-  height: 100px;
-  width: 100px;
-  @media screen and (min-width: 768px) {
-    height: 200px;
-    width: 200px;
-  }
-`
 
 export const ResultContainer = styled.div`
   display: flex;
@@ -72,6 +52,13 @@ export const ResultImage = styled.img`
     width: 40%;
   }
 `
+export const ResultOpponentImage = styled.img`
+  width: 60%;
+  @media screen and (min-width: 768px) {
+    width: 40%;
+  }
+`
+
 export const ResultDisplayContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -107,7 +94,7 @@ export const PopupButton = styled.button`
 `
 
 export const ModalContainer = styled.div`
-  width: 80%;
+  width: 260px;
   height: 260px;
   background-color: #ffffff;
   border-radius: 8px;
@@ -117,7 +104,7 @@ export const ModalContainer = styled.div`
   justify-content: center;
   align-items: center;
   @media screen and (min-width: 768px) {
-    width: 80%;
+    width: 400px;
     height: 400px;
   }
 `

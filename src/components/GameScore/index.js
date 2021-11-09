@@ -1,3 +1,5 @@
+import Context from '../../Context/GameContext'
+
 import {
   ScoreContainer,
   ScoreHeading,
@@ -6,23 +8,27 @@ import {
   ScoreDisplayCount,
 } from './styledComponent'
 
-const ScoreComponent = props => {
-  const {score} = props
-  return (
-    <ScoreContainer>
-      <ScoreHeading>
-        ROCK
-        <br />
-        PAPER
-        <br />
-        SCISSORS
-      </ScoreHeading>
-      <ScoreCountContainer>
-        <ScoreDisplayText>Score</ScoreDisplayText>
-        <ScoreDisplayCount>{score}</ScoreDisplayCount>
-      </ScoreCountContainer>
-    </ScoreContainer>
-  )
-}
+const ScoreComponent = () => (
+  <Context.Consumer>
+    {value => {
+      const {gameScore} = value
+      return (
+        <ScoreContainer>
+          <ScoreHeading>
+            ROCK
+            <br />
+            PAPER
+            <br />
+            SCISSORS
+          </ScoreHeading>
+          <ScoreCountContainer>
+            <ScoreDisplayText>Score</ScoreDisplayText>
+            <ScoreDisplayCount>{gameScore}</ScoreDisplayCount>
+          </ScoreCountContainer>
+        </ScoreContainer>
+      )
+    }}
+  </Context.Consumer>
+)
 
 export default ScoreComponent
